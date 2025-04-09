@@ -2,10 +2,10 @@
 
 The Deepening Glade is a room. "The forest stretches up into the hills around you. The setting sun filters through, lighting the small grassy glade in which you stand. A very small [stream] flows from north to south along the eastern edge. In the center of the glade, large and prominent, is a massive and ancient [Stone Table]."
 
-The stream is fixed in place. "The [water]s of the crystal stream glide gently by. Its shallow blue-green shadows absorb your attention for a moment."
+The stream is fixed in place in the Glade. The description is "The [water]s of the crystal stream glide gently by. Its shallow blue-green shadows absorb your attention for a moment." Instead of doing anything with the stream: say "You focus on the [water]."
 
-The stream water is part of the stream. Instead of doing anything with the water: say "The water seems so peaceful. You leave it to travel on its way."
+The stream water is part of the stream. Instead of doing anything with the stream water: say "The water seems so peaceful. You leave it to travel on its way."
 
-The Stone Table is fixed in place and undescribed. "The table's massive legs are rooted in the earth. Its huge round top is inscribed with many [arcane runes]."
+The Stone Table is fixed in place and undescribed in the Glade. The description is "The table's massive legs are rooted in the earth. Its huge round top is inscribed with many [arcane runes]."
 
-The arcane runes are part of the Stone Table. "You are new to magic, but the runes seem to outline a spell for creating a [quotation mark]fetch[quotation mark]. What that is you are not sure, but you know one way to find out: make one!"
+The arcane runes are part of the Stone Table. The description is "You are new to magic, but the runes seem to outline a spell for creating a [quotation mark]fetch[quotation mark]. What that is you are not sure, but you know one way to find out: make one!"
