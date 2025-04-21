@@ -28,9 +28,28 @@ Some Dragon Tree sap is a spell component.
 
 Section 3 - Down The Upstream Path
 
-The Upstream Path is north of the Glade.
+The Upstream Path is north of the Glade and east of the Douglas Fir. "The path meanders through the forest, sometimes closer, sometimes farther from the stream. You walk along peacefully, mesmerized by its melodic, rhythmic gurgling. A sunny meadow lies [bold type]west[roman type] of the path. A old growth douglas fir is on the [bold type]east[roman type] side of the path."
+
+A Douglas Fir is east of the Upstream Path. "This enormous fir tree is definitely old growth."
+
+A shovel is in the Douglas Fir. The description of the shovel is "This digging spade has a fine oak handle. The blade is firm and clean."
+
+A Sunny Meadow is west of the Upstream Path. "The meadow is sunny, but wet and marshy. A dank, musty fragrance hangs in the air, rising from the damp soil. You hesitate to get your boots muddy, but you see a colorful patch further [bold type]west[roman type] on the far edge of the meadow. It is a sunny spot dotted by floppy rosettes of leaves adorned with purple flowers."
+
+A Mandrake Patch is west of the sunny meadow. "Mandrakes! So many mandrakes blossoming with delicate purple flowers in the wet, fecund earth. You know that just under the surface, buried within the rich loamy soil is the twisted, gnarly, forked root for which you search."
 
 A Mandrake root is a spell component.
+The description of the Mandrake root is "The plant is beautiful, but you have heard stories of people who died horrible deaths after pulling up a mandrake root. They are probably superstitious rumors, right?"
+A Mandrake root is in the mandrake patch.
+
+Instead of taking the Mandrake root when the player does not have the shovel:
+say "A wise sorcerer once told you not to pull a Mandrake root with your bare hands. If only you had a shovel!"
+
+[
+  Assumes you are starting in the Deepening Glade.
+  Expects you add a mandrake root to your inventory.
+]
+Test mandrake with "n / w / w/ x mandrake root / take a mandrake root / i / e / e / e / take shovel / w / w / w / take mandrake root / i"
 
 Section 4 - Down The Downstream Path
 
