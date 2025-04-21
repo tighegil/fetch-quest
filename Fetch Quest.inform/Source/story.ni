@@ -42,6 +42,20 @@ After examining the wax effigy:
 	if the squish of the wax effigy is not unrecognizable:
 		say "Careful, it seems fragile.";
 
+Fixing is an action applying to one touchable thing.
+Understand "fix [something]" as fixing.
+
+Check fixing something (called target):
+	if the target is not the wax effigy:
+		say "You aren't sure how to fix that." instead.
+		
+Report fixing the wax effigy:
+	if the squish of the wax effigy is not unmarred:
+		say "You sculpt the wax effigy in your own image.";
+		now the squish of the wax effigy is unmarred;
+	otherwise:
+		say "This seems fine as-is.";
+
 Section 2 - Down The Rising Path
 
 The Rising Path is west of the Glade.
