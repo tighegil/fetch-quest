@@ -28,7 +28,7 @@ Some Dragon Tree sap is a spell component.
 
 Section 3 - Down The Upstream Path
 
-The Upstream Path is north of the Glade and east of the Douglas Fir. "The path meanders through the forest, sometimes closer, sometimes farther from the stream. You walk along peacefully, mesmerized by its melodic, rhythmic gurgling. A sunny meadow lies [bold type]west[roman type] of the path. A old growth douglas fir is on the [bold type]east[roman type] side of the path."
+The Upstream Path is north of the Glade and east of the Douglas Fir. "The path meanders through the forest, sometimes closer, sometimes farther from the stream. You walk along peacefully, mesmerized by its melodic, rhythmic gurgling. A sunny meadow lies [bold type]west[roman type] of the path. An old growth douglas fir tree is on the [bold type]east[roman type] side of the path."
 
 A Douglas Fir is east of the Upstream Path. "This enormous fir tree is definitely old growth."
 
