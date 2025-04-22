@@ -56,6 +56,13 @@ Report fixing the wax effigy:
 	otherwise:
 		say "This seems fine as-is.";
 
+Instead of tasting the wax effigy:
+	say "This tastes like crayons!";
+	let the current squish be the squish of the wax effigy;
+	if the current squish is not unrecognizable: 
+		now the squish of the wax effigy is the squish after the current squish;
+		say "Oops. It's a little squished."
+
 Section 2 - Down The Rising Path
 
 The Rising Path is west of the Glade.
