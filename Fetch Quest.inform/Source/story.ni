@@ -18,7 +18,50 @@ Section 1 - Down The Winding Path
 
 The Winding Path is east of the Glade.
 
-The wax effigy is a spell component.
+[squish values modeled after beverage heat values in "Disenchantment Bay"]
+
+Squish is a kind of value. The squishes are unmarred, squished, unrecognizable.
+
+The wax effigy is a spell component in The Winding Path. The wax effigy has a squish. The squish of the wax effigy is unmarred.
+
+After taking the wax effigy:
+	say "Oops, you squish it a little accidentally.";
+	let the current squish be the squish of the wax effigy;
+	if the current squish is not unrecognizable: 
+		now the squish of the wax effigy is the squish after the current squish.
+
+Check eating the wax effigy:
+	if the squish of the wax effigy is unrecognizable:
+		say "You're not sure it's a good idea to eat a wax effigy of nobody." instead;
+	otherwise:
+		say "The wax squishes between your teeth. Yum.";
+
+The description of the wax effigy is "[if the squish of the wax effigy is unmarred]The wax effigy looks familiar...you've never seen it before, but you can tell it's as good-looking as ever.[otherwise if the squish of the wax effigy is squished]The wax effigy looks a little squished, but you can still tell who it's supposed to be.[otherwise]The wax effigy is squished beyond recognition. Is it even still an effigy?[end if]"
+
+After examining the wax effigy:
+	if the squish of the wax effigy is not unrecognizable:
+		say "Careful, it seems fragile.";
+
+Fixing is an action applying to one touchable thing.
+Understand "fix [something]" as fixing.
+
+Check fixing something (called target):
+	if the target is not the wax effigy:
+		say "You aren't sure how to fix that." instead.
+		
+Report fixing the wax effigy:
+	if the squish of the wax effigy is not unmarred:
+		say "You sculpt the wax effigy in your own image.";
+		now the squish of the wax effigy is unmarred;
+	otherwise:
+		say "This seems fine as-is.";
+
+Instead of tasting the wax effigy:
+	say "This tastes like crayons!";
+	let the current squish be the squish of the wax effigy;
+	if the current squish is not unrecognizable: 
+		now the squish of the wax effigy is the squish after the current squish;
+		say "Oops. It's a little squished."
 
 Section 2 - Down The Rising Path
 
