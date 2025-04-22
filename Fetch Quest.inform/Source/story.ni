@@ -38,10 +38,6 @@ Check eating the wax effigy:
 
 The description of the wax effigy is "[if the squish of the wax effigy is unmarred]The wax effigy looks familiar...you've never seen it before, but you can tell it's as good-looking as ever.[otherwise if the squish of the wax effigy is squished]The wax effigy looks a little squished, but you can still tell who it's supposed to be.[otherwise]The wax effigy is squished beyond recognition. Is it even still an effigy?[end if]"
 
-After examining the wax effigy:
-	if the squish of the wax effigy is not unrecognizable:
-		say "Careful, it seems fragile.";
-
 Fixing is an action applying to one touchable thing.
 Understand "fix [something]" as fixing.
 
@@ -62,6 +58,20 @@ Instead of tasting the wax effigy:
 	if the current squish is not unrecognizable: 
 		now the squish of the wax effigy is the squish after the current squish;
 		say "Oops. It's a little squished."
+		
+The wax effigy has a number called examine-count. The examine-count of the wax effigy is 0.
+
+Instead of examining the wax effigy:
+	if the examine-count of the wax effigy is 0:
+		say "The wax effigy looks familiar, but you can't quite place it.";
+	else if the examine-count of the wax effigy is 1:
+		say "The wax effigy reminds you of yourself. Could it be?";
+    	else:
+		say "The wax effigy is definitely you. There's no doubt about it.";
+		say "Yes";
+	increment the examine-count of the wax effigy;
+	if the squish of the wax effigy is not unrecognizable:
+		say "Careful, it seems fragile.";
 
 Section 2 - Down The Rising Path
 
