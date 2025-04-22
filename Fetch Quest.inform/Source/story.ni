@@ -36,6 +36,11 @@ A shovel is in the Douglas Fir. The description of the shovel is "This digging s
 
 A Sunny Meadow is west of the Upstream Path. "The meadow is sunny, but wet and marshy. A dank, musty fragrance hangs in the air, rising from the damp soil. You hesitate to get your boots muddy, but you see a colorful patch further [bold type]west[roman type] on the far edge of the meadow. It is a sunny spot dotted by floppy rosettes of leaves adorned with purple flowers."
 
+A backpack is a container in the Sunny Meadow.
+The backpack contains ear muffs.
+The ear muffs are wearable.
+The backpack contains a flask of water.
+
 A Mandrake Patch is west of the sunny meadow. "Mandrakes! So many mandrakes blossoming with delicate purple flowers in the wet, fecund earth. You know that just under the surface, buried within the rich loamy soil is the twisted, gnarly, forked root for which you search."
 
 A Mandrake root is a spell component.
@@ -44,6 +49,9 @@ A Mandrake root is in the mandrake patch.
 
 Instead of taking the Mandrake root when the player does not have the shovel:
 say "A wise sorcerer once told you not to pull a Mandrake root with your bare hands. If only you had a shovel!"
+
+Instead of taking the Mandrake root when the player is not wearing the ear muffs:
+say "As you pull up the mandrake root you hear an earsplitting shriek. As the shreik rings through your head your vision fades. The last thing you see before you lose consciousness, are tiny little legs pitter pattering acrosss the Mandrake Patch into the distance as it waves a little fist that looks oddly like it is flipping you off. When you awaken that mandrake root has disappeared. Lucky for you, there are many mandrakes left in the patch."
 
 [
   Assumes you are starting in the Deepening Glade.
