@@ -18,18 +18,20 @@ Section 1 - Down The Winding Path
 
 The Winding Path is east of the Glade. "You find yourself in what looks like the remains of a forest. The trees are all dead, a few of them fallen over. You feel an overwhelming sense of dread emanating from this former forest. You see a stump, with [a wax effigy] clumsily laid on top of it.".
 
-[squish values modeled after beverage heat values in "Disenchantment Bay"]
+[Squish values modeled after beverage heat values in "Disenchantment Bay"]
 
 Squish is a kind of value. The squishes are unmarred, squished, unrecognizable.
 
 The wax effigy is a spell component in The Winding Path. The wax effigy has a squish. The squish of the wax effigy is unmarred.
 
+[Picking up the effigy will "squish" it once each time, until it is unrecognizable.]
 After taking the wax effigy:
 	say "Oops, you squish it a little accidentally.";
 	let the current squish be the squish of the wax effigy;
 	if the current squish is not unrecognizable: 
 		now the squish of the wax effigy is the squish after the current squish.
 
+[You can't eat the wax effigy if it's unrecognizable (because it wouldn't work for the spell)]
 Check eating the wax effigy:
 	if the squish of the wax effigy is unrecognizable:
 		say "You're not sure it's a good idea to eat a wax effigy of nobody." instead;
@@ -42,6 +44,7 @@ After examining the wax effigy:
 	if the squish of the wax effigy is not unrecognizable:
 		say "Careful, it seems fragile.";
 
+[The player can fix the wax effigy if it becomes unrecognizable.]
 Fixing is an action applying to one touchable thing.
 Understand "fix [something]" as fixing.
 
@@ -56,6 +59,7 @@ Report fixing the wax effigy:
 	otherwise:
 		say "This seems fine as-is.";
 
+[The player can taste the wax effigy, but this will squish it.]
 Instead of tasting the wax effigy:
 	say "This tastes like crayons!";
 	let the current squish be the squish of the wax effigy;
