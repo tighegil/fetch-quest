@@ -66,6 +66,11 @@ Instead of tasting the wax effigy:
 	if the current squish is not unrecognizable: 
 		now the squish of the wax effigy is the squish after the current squish;
 		say "Oops. It's a little squished."
+		
+Instead of examining the wax effigy:
+	say "[if the squish of the wax effigy is unmarred]The wax effigy looks familiar...you've never seen it before, but you can tell it's as good-looking as ever.[otherwise if the squish of the wax effigy is squished]The wax effigy looks a little squished, but you can still tell who it's supposed to be.[otherwise]The wax effigy is squished beyond recognition. Is it even still an effigy?[end if]";
+	if the squish of the wax effigy is not unrecognizable:
+		say "Careful, it seems fragile.";
 
 Section 2 - Down The Rising Path
 
