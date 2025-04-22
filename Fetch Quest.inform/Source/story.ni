@@ -53,11 +53,14 @@ say "A wise sorcerer once told you not to pull a Mandrake root with your bare ha
 Instead of taking the Mandrake root when the player is not wearing the ear muffs:
 say "As you pull up the mandrake root you hear an earsplitting shriek. As the shreik rings through your head your vision fades. The last thing you see before you lose consciousness, are tiny little legs pitter pattering acrosss the Mandrake Patch into the distance as it waves a little fist that looks oddly like it is flipping you off. When you awaken that mandrake root has disappeared. Lucky for you, there are many mandrakes left in the patch."
 
-[
-  Assumes you are starting in the Deepening Glade.
-  Expects you add a mandrake root to your inventory.
-]
-Test mandrake with "n / w / w/ x mandrake root / take a mandrake root / i / e / e / e / take shovel / w / w / w / take mandrake root / i"
+[Expects you add a mandrake root to your inventory.]
+Test mandrake with "n / e / take shovel / w / w / wear ear muffs / w / x mandrake root / take mandrake root / i"
+
+[Expects you cannot take a mandrake root, because you do not have a shovel.]
+Test no-shovel with "n / w / w / take mandrake root / i"
+
+[Expects you are knocked unconscious by a shrieking mandrake root.]
+Test no-ear-muffs with "n / e / take shovel / w /w / w / take mandrake root / i"
 
 Section 4 - Down The Downstream Path
 
