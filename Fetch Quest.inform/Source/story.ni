@@ -16,7 +16,7 @@ A spell component is a kind of thing. A spell component is always edible. After 
 
 Section 1 - Down The Winding Path
 
-The Winding Path is east of the Glade.
+The Winding Path is east of the Glade. "You find yourself in what looks like the remains of a forest. The trees are all dead, a few of them fallen over. You feel an overwhelming sense of dread emanating from this former forest. You see a stump, with [a wax effigy] clumsily laid on top of it.".
 
 [squish values modeled after beverage heat values in "Disenchantment Bay"]
 
