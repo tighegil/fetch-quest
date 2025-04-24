@@ -37,6 +37,7 @@ A shovel is in the Douglas Fir. The description of the shovel is "This digging s
 A Sunny Meadow is west of the Upstream Path. "The meadow is sunny, but wet and marshy. A dank, musty fragrance hangs in the air, rising from the damp soil. You hesitate to get your boots muddy, but you see a colorful patch further [bold type]west[roman type] on the far edge of the meadow. It is a sunny spot dotted by floppy rosettes of leaves adorned with purple flowers."
 
 A backpack is a container in the Sunny Meadow.
+The backpack is wearable.
 The backpack contains ear muffs.
 The ear muffs are wearable.
 The backpack contains a flask of water.
