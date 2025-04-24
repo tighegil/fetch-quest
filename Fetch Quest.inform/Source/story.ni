@@ -45,13 +45,18 @@ A Mandrake Patch is west of the sunny meadow. "Mandrakes! So many mandrakes blos
 
 A Mandrake root is a spell component.
 The description of the Mandrake root is "The plant is beautiful, but you have heard stories of people who died horrible deaths after pulling up a mandrake root. They are probably superstitious rumors, right?"
-A Mandrake root is in the mandrake patch.
+A Mandrake root is in the Mandrake Patch.
+The mandrake root can be either pulled or unpulled. The mandrake root is unpulled.
 
 Instead of taking the Mandrake root when the player does not have the shovel:
 say "A wise sorcerer once told you not to pull a Mandrake root with your bare hands. If only you had a shovel!"
 
 Instead of taking the Mandrake root when the player is not wearing the ear muffs:
-say "As you pull up the mandrake root you hear an earsplitting shriek. As the shriek rings through your head, your vision fades. The last thing you see, before you lose consciousness, are tiny little legs scampering across the Mandrake Patch into the distance as it waves a little fist that looks oddly like it is flipping you off. When you awaken, that mandrake root has disappeared. Lucky for you, there are still many mandrakes left in the patch."
+	If the mandrake root is unpulled:
+		say "As you pull up the mandrake root you hear an earsplitting shriek. As the shriek rings through your head, your vision fades. The last thing you see, before you lose consciousness, are tiny little legs scampering across the Mandrake Patch into the distance as it waves a little fist that looks oddly like it is flipping you off. When you awaken, that mandrake root has disappeared. Lucky for you, there are still many mandrakes left in the patch";
+		now the mandrake root is pulled;
+	otherwise:
+		say "You should have learned from the last time you tried this ... You need to [bold type]wear[roman type] proper ear protection!"
 
 [Expects a mandrake root added to your inventory.]
 Test mandrake with "n / e / take shovel / w / w / wear ear muffs / w / x mandrake root / take mandrake root / i"
@@ -64,6 +69,12 @@ Test untaken-ear-muffs with "n / e / take shovel / w / w / w / take mandrake roo
 
 [Expects you are knocked unconscious by a shrieking mandrake root, because you are not wearing ear muffs.]
 Test unworn-ear-muffs with "n / e / take shovel / w / w / take ear muffs / w / take mandrake root / i"
+
+[Expects you are warned, because you are not wearing ear muffs.]
+Test twice-unworn-ear-muffs with "n / e / take shovel / w / w / take ear muffs / w / take mandrake root / take mandrake root"
+
+[Expects you succeed on third pull when you finally wear ear muffs.]
+Test third-pull with "n / e / take shovel / w / w / take ear muffs / w / take mandrake root / take mandrake root / wear ear muffs / take mandrake root / i"
 
 Section 4 - Down The Downstream Path
 
