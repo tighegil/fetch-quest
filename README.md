@@ -3,3 +3,4 @@
 * shrink effigy for portability (incorporate a helpful NPC?)
 * ~~describe wandering path~~ done (thanks aadit!)
 * test commands
+* blob ending
