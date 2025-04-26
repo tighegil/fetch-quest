@@ -58,17 +58,25 @@ The mandrake root can be either pulled or unpulled. The mandrake root is unpulle
       You can't see any such thing.
     even when that thing is located in your current room.
 ]
-Understand "dig [mandrake root]" or "dig up [mandrake root]" as taking.
+Understand
+  "dig [mandrake root]"
+  or "dig [mandrake root] with a shovel" 
+  or "dig [mandrake root] with the shovel" 
+  or "dig up [mandrake root]"
+  or "dig up [mandrake root] with a shovel" 
+  or "dig up [mandrake root] with the shovel" 
+as taking.
 
 Instead of taking the Mandrake root when the player does not have the shovel:
 say "A wise sorcerer once told you not to pull a Mandrake root with your bare hands. If only you had a shovel!"
 
 Instead of taking the Mandrake root when the player is not wearing the ear muffs:
 	If the mandrake root is unpulled:
-		say "As you pull up the mandrake root you hear an earsplitting shriek. As the shriek rings through your head, your vision fades. The last thing you see, before you lose consciousness, are tiny little legs scampering across the Mandrake Patch into the distance as it waves a little fist that looks oddly like it is flipping you off. When you awaken, that mandrake root has disappeared. Lucky for you, there are still many mandrakes left in the patch";
+		say "As you pull up the mandrake root you hear an earsplitting shriek. As the shriek rings through your head, your vision fades. The last thing you see, before you lose consciousness, are tiny little legs scampering across the Mandrake Patch into the distance as it waves a little fist that looks oddly like it is flipping you off. When you awaken, that mandrake root has disappeared. Lucky for you, [bold type]there are still many mandrakes remaining in the patch[roman type].";
 		now the mandrake root is pulled;
 	otherwise:
 		say "You should have learned from the last time you tried this ... You need to [bold type]wear[roman type] proper ear protection!"
+
 
 [Expects a mandrake root added to your inventory.]
 Test mandrake with "n / e / take shovel / w / w / wear ear muffs / w / x mandrake root / take mandrake root / i"
@@ -77,7 +85,7 @@ Test mandrake with "n / e / take shovel / w / w / wear ear muffs / w / x mandrak
 Test dig-mandrake with "n / e / take shovel / w / w / wear ear muffs / w / dig mandrake root / i"
 
 [Expects warning when digging something other than mandrake root.]
-Test dig-non-root with "n / e / dig up shovel"
+Test dig-non-root with "n / e / take shovel / w / w / dig up ear muffs"
 
 [Expects unsuccessful take of a mandrake root, because you do not have a shovel.]
 Test no-shovel with "n / w / w / take mandrake root / i"
