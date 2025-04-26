@@ -49,6 +49,17 @@ The description of the Mandrake root is "The plant is beautiful, but you have he
 A Mandrake root is in the Mandrake Patch.
 The mandrake root can be either pulled or unpulled. The mandrake root is unpulled.
 
+[ TODO:
+  This enables you to dig a mandrake root correctly,
+  *but* if you try to dig anything else:
+    Expected Behavior: A warning message, like:
+      You cannot dig that.
+    Actual Behavior: You get an inappropriate warning:
+      You can't see any such thing.
+    even when that thing is located in your current room.
+]
+Understand "dig [mandrake root]" or "dig up [mandrake root]" as taking.
+
 Instead of taking the Mandrake root when the player does not have the shovel:
 say "A wise sorcerer once told you not to pull a Mandrake root with your bare hands. If only you had a shovel!"
 
@@ -61,6 +72,12 @@ Instead of taking the Mandrake root when the player is not wearing the ear muffs
 
 [Expects a mandrake root added to your inventory.]
 Test mandrake with "n / e / take shovel / w / w / wear ear muffs / w / x mandrake root / take mandrake root / i"
+
+[Expects a mandrake root added to your inventory.]
+Test dig-mandrake with "n / e / take shovel / w / w / wear ear muffs / w / dig mandrake root / i"
+
+[Expects warning when digging something other than mandrake root.]
+Test dig-non-root with "n / e / dig up shovel"
 
 [Expects unsuccessful take of a mandrake root, because you do not have a shovel.]
 Test no-shovel with "n / w / w / take mandrake root / i"
