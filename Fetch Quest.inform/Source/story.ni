@@ -33,6 +33,7 @@ The Upstream Path is north of the Glade and east of the Douglas Fir. "The path m
 A Douglas Fir is east of the Upstream Path. "This enormous fir tree is definitely old growth."
 
 A shovel is in the Douglas Fir. The description of the shovel is "This digging spade has a fine oak handle. The blade is firm and clean."
+Understand "spade" as a shovel.
 
 A Sunny Meadow is west of the Upstream Path. "The meadow is sunny, but wet and marshy. A dank, musty fragrance hangs in the air, rising from the damp soil. You hesitate to get your boots muddy, but you see a colorful patch further [bold type]west[roman type] on the far edge of the meadow. It is a sunny spot dotted by floppy rosettes of leaves adorned with purple flowers."
 
@@ -49,23 +50,52 @@ The description of the Mandrake root is "The plant is beautiful, but you have he
 A Mandrake root is in the Mandrake Patch.
 The mandrake root can be either pulled or unpulled. The mandrake root is unpulled.
 
-[ TODO:
-  This enables you to dig a mandrake root correctly,
-  *but* if you try to dig anything else:
-    Expected Behavior: A warning message, like:
-      You cannot dig that.
-    Actual Behavior: You get an inappropriate warning:
-      You can't see any such thing.
-    even when that thing is located in your current room.
+[
+  Digging
+  See documentation for 'Creating New Actions':
+  https://inform-7-handbook.readthedocs.io/en/latest/chapter_4_actions/creating_new_actions/
 ]
-Understand
-  "dig [mandrake root]"
-  or "dig [mandrake root] with a shovel" 
-  or "dig [mandrake root] with the shovel" 
-  or "dig up [mandrake root]"
-  or "dig up [mandrake root] with a shovel" 
-  or "dig up [mandrake root] with the shovel" 
-as taking.
+Digging is an action applying to nothing. Understand "dig" as digging.
+Understand "dig up" as digging.
+
+Check digging:
+	if the player carries the shovel:
+		say "You need to be more specific about what you want to dig up.";
+	otherwise:
+		say "You don't have a shovel."
+
+Root-digging is an action applying to one thing. Understand "dig [something]" and "dig up [something]" as root-digging.
+
+Check root-digging:
+	if the noun is a mandrake root:
+		if the mandrake root is unpulled and the player is not wearing the ear muffs:
+			 say "As you pull up the mandrake root you hear an earsplitting shriek. As the shriek rings through your head, your vision fades. The last thing you see, before you lose consciousness, are tiny little legs scampering across the Mandrake Patch into the distance as the root waves a little fist that looks oddly like it is flipping you off. When you awaken, that mandrake root has disappeared. Lucky for you, [bold type]there are still many mandrakes remaining in the patch[roman type].";
+		otherwise if the mandrake root is pulled and the player is not wearing the ear muffs:
+			say "You should have learned from the last time you tried this ... You need to [bold type]wear[roman type] proper ear protection!";
+		otherwise if the player carries the shovel:
+			try digging the mandrake root with the shovel instead;
+		otherwise:
+			say "A wise sorcerer once told you not to pull a Mandrake root with your bare hands. If only you had a shovel!";
+	otherwise:
+		say "You cannot dig [the noun]."
+
+Digging it with is an action applying to two things. Understand "dig [something] with [something]" as digging it with.
+
+Check digging it with:
+	if the second noun is not the shovel:
+		say "[The second noun] cannot be used for digging things." instead;
+	otherwise if the player does not carry the shovel:
+		say "If you want to do that, you need to find a shovel." instead;
+	otherwise if the noun is not the mandrake root:
+		say "There is no need to dig up [the noun]." instead.
+
+Carry out digging it with:
+	try taking the mandrake root;
+	now the mandrake root is pulled.
+
+Report digging it with:
+	say "You dug up a mandrake root while avoiding debilitating side-effects!"
+[end Digging]
 
 Instead of taking the Mandrake root when the player does not have the shovel:
 say "A wise sorcerer once told you not to pull a Mandrake root with your bare hands. If only you had a shovel!"
@@ -76,7 +106,6 @@ Instead of taking the Mandrake root when the player is not wearing the ear muffs
 		now the mandrake root is pulled;
 	otherwise:
 		say "You should have learned from the last time you tried this ... You need to [bold type]wear[roman type] proper ear protection!"
-
 
 [Expects a mandrake root added to your inventory.]
 Test mandrake with "n / e / take shovel / w / w / wear ear muffs / w / x mandrake root / take mandrake root / i"
