@@ -87,7 +87,7 @@ Check digging it with:
 	if the noun is not the mandrake root:
 		say "There is no use wasting time to dig up [the noun]." instead;
 	otherwise if the second noun is not the shovel:
-		say "[The second noun] cannot be used for digging things." instead;
+		say "[The second noun] cannot be used for digging things. Use a shovel instead." instead;
 	otherwise if the player does not carry the shovel:
 		say "If you want to do that, you need to find a shovel." instead.
 
