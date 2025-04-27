@@ -86,10 +86,10 @@ Understand "dig up [something] with [something]" as digging it with.
 Check digging it with:
 	if the noun is not the mandrake root:
 		say "There is no use wasting time to dig up [the noun]." instead;
-	otherwise if the player does not carry the shovel:
-		say "If you want to do that, you need to find a shovel." instead;
 	otherwise if the second noun is not the shovel:
-		say "[The second noun] cannot be used for digging things." instead.
+		say "[The second noun] cannot be used for digging things." instead;
+	otherwise if the player does not carry the shovel:
+		say "If you want to do that, you need to find a shovel." instead.
 
 Carry out digging it with:
 	try taking the mandrake root;
@@ -128,7 +128,7 @@ Test unworn-ear-muffs with "n / e / take shovel / w / w / take ear muffs / w / t
 Test twice-unworn-ear-muffs with "n / e / take shovel / w / w / take ear muffs / w / take mandrake root / take mandrake root"
 
 [Expects you succeed on third pull when you finally wear ear muffs.]
-Test third-pull with "n / e / take shovel / w / w / take ear muffs / w / take mandrake root / take mandrake root / wear ear muffs / take mandrake root / i"
+Test third-pull with "n / e / take shovel / w / w / take ear muffs / w / take mandrake root / take mandrake root / wear ear muffs / dig up mandrake root with the shovel / i"
 
 Section 4 - Down The Downstream Path
 
