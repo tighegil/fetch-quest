@@ -77,24 +77,23 @@ Check root-digging:
 		otherwise:
 			say "A wise sorcerer once told you not to pull a Mandrake root with your bare hands. If only you had a shovel!";
 	otherwise:
-		say "You cannot dig [the noun]."
+		say "You cannot dig up [the noun]."
 
-Digging it with is an action applying to two things. Understand "dig [something] with [something]" as digging it with.
+Digging it with is an action applying to two things.
+Understand "dig [something] with [something]" as digging it with.
+Understand "dig up [something] with [something]" as digging it with.
 
 Check digging it with:
-	if the second noun is not the shovel:
-		say "[The second noun] cannot be used for digging things." instead;
+	if the noun is not the mandrake root:
+		say "There is no use wasting time to dig up [the noun]." instead;
 	otherwise if the player does not carry the shovel:
 		say "If you want to do that, you need to find a shovel." instead;
-	otherwise if the noun is not the mandrake root:
-		say "There is no need to dig up [the noun]." instead.
+	otherwise if the second noun is not the shovel:
+		say "[The second noun] cannot be used for digging things." instead.
 
 Carry out digging it with:
 	try taking the mandrake root;
 	now the mandrake root is pulled.
-
-Report digging it with:
-	say "You dug up a mandrake root while avoiding debilitating side-effects!"
 [end Digging]
 
 Instead of taking the Mandrake root when the player does not have the shovel:
