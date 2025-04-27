@@ -40,7 +40,13 @@ A backpack is a container in the Sunny Meadow.
 The backpack is wearable.
 The backpack contains ear muffs.
 The ear muffs are wearable.
-The backpack contains a flask of water.
+
+The backpack contains a flask.
+The flask contains absinthe. The description of the flask is "A slightly dented metal flask looks like it has been on quite a few adventures. Based on the slightly minty licorice odor, you think it is full of absinthe. You'd best stay away from that stuff."
+Instead of drinking the flask, say "You need to keep a sharp mind on your quest. Don't touch the absinthe."
+The description of the absinthe is "This liquid has a slightly minty licorice odor, so you think it is probably absinthe. You'd best stay away from that stuff!"
+Instead of drinking absinthe, say "You need to keep a sharp mind on your quest. Don't touch the absinthe."
+Instead of taking the absinthe, try taking the flask.
 
 A Mandrake Patch is west of the sunny meadow. "Mandrakes! So many mandrakes blossoming with delicate purple flowers in the wet, fecund earth. You know that just under the surface, buried within the rich loamy soil is the twisted, gnarly, forked root for which you search."
 
