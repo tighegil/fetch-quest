@@ -32,10 +32,14 @@ After taking the wax effigy:
 	if the current squish is not unrecognizable: 
 		now the squish of the wax effigy is the squish after the current squish.
 
-[You can't eat the wax effigy if it's unrecognizable (because it wouldn't work for the spell)]
+[For Section 1's Blob-State Ending - If the Player attempts to eat an unrecognizable Blob.]
+BlobState is a truth state that varies. BlobState is false.
+
+[If you eat the effigy when it's unrecognizable, you'll turn into a blob soon.]
 Check eating the wax effigy:
 	if the squish of the wax effigy is unrecognizable:
-		say "You're not sure it's a good idea to eat a wax effigy of nobody." instead;
+		say "You're not sure it's a good idea to eat a wax effigy of nobody, but you do it anyway.";
+		now Blobstate is true;
 	otherwise:
 		say "The wax squishes between your teeth. Yum.";
 
@@ -67,6 +71,8 @@ Instead of tasting the wax effigy:
 	if the current squish is not unrecognizable: 
 		now the squish of the wax effigy is the squish after the current squish;
 		say "Oops. You squished it a little."
+
+
 
 Section 2 - Down The Rising Path
 
