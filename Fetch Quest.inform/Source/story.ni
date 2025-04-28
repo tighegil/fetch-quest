@@ -39,8 +39,9 @@ A Sunny Meadow is west of the Upstream Path. "The meadow is sunny, but wet and m
 
 A backpack is a container in the Sunny Meadow.
 The backpack is wearable.
-The backpack contains ear muffs.
-The ear muffs are wearable.
+The backpack contains earmuffs.
+The earmuffs are wearable.
+Understand "ear muffs" as the earmuffs.
 
 The backpack contains a flask.
 The flask contains absinthe. The description of the flask is "A slightly dented metal flask looks like it has been on quite a few adventures. Based on the slightly minty licorice odor, you think it is full of absinthe. You'd best stay away from that stuff."
@@ -74,9 +75,9 @@ Root-digging is an action applying to one thing. Understand "dig [something]" an
 
 Check root-digging:
 	if the noun is a mandrake root:
-		if the mandrake root is unpulled and the player is not wearing the ear muffs:
+		if the mandrake root is unpulled and the player is not wearing the earmuffs:
 			 say "As you pull up the mandrake root you hear an earsplitting shriek. As the shriek rings through your head, your vision fades. The last thing you see, before you lose consciousness, are tiny little legs scampering across the Mandrake Patch into the distance as the root waves a little fist that looks oddly like it is flipping you off. When you awaken, that mandrake root has disappeared. Lucky for you, [bold type]there are still many mandrakes remaining in the patch[roman type].";
-		otherwise if the mandrake root is pulled and the player is not wearing the ear muffs:
+		otherwise if the mandrake root is pulled and the player is not wearing the earmuffs:
 			say "You should have learned from the last time you tried this ... You need to [bold type]wear[roman type] proper ear protection!";
 		otherwise if the player carries the shovel:
 			try digging the mandrake root with the shovel instead;
@@ -105,7 +106,7 @@ Carry out digging it with:
 Instead of taking the Mandrake root when the player does not have the shovel:
 say "A wise sorcerer once told you not to pull a Mandrake root with your bare hands. If only you had a shovel!"
 
-Instead of taking the Mandrake root when the player is not wearing the ear muffs:
+Instead of taking the Mandrake root when the player is not wearing the earmuffs:
 	If the mandrake root is unpulled:
 		say "As you pull up the mandrake root you hear an earsplitting shriek. As the shriek rings through your head, your vision fades. The last thing you see, before you lose consciousness, are tiny little legs scampering across the Mandrake Patch into the distance as it waves a little fist that looks oddly like it is flipping you off. When you awaken, that mandrake root has disappeared. Lucky for you, [bold type]there are still many mandrakes remaining in the patch[roman type].";
 		now the mandrake root is pulled;
@@ -113,28 +114,28 @@ Instead of taking the Mandrake root when the player is not wearing the ear muffs
 		say "You should have learned from the last time you tried this ... You need to [bold type]wear[roman type] proper ear protection!"
 
 [Expects a mandrake root added to your inventory.]
-Test mandrake with "n / e / take shovel / w / w / wear ear muffs / w / x mandrake root / take mandrake root / i"
+Test mandrake with "n / e / take shovel / w / w / wear earmuffs / w / x mandrake root / take mandrake root / i"
 
 [Expects a mandrake root added to your inventory.]
-Test dig-mandrake with "n / e / take shovel / w / w / wear ear muffs / w / dig mandrake root / i"
+Test dig-mandrake with "n / e / take shovel / w / w / wear earmuffs / w / dig mandrake root / i"
 
 [Expects warning when digging something other than mandrake root.]
-Test dig-non-root with "n / e / take shovel / w / w / dig up ear muffs"
+Test dig-non-root with "n / e / take shovel / w / w / dig up earmuffs"
 
 [Expects unsuccessful take of a mandrake root, because you do not have a shovel.]
 Test no-shovel with "n / w / w / take mandrake root / i"
 
-[Expects you are knocked unconscious by a shrieking mandrake root, because you have no ear muffs.]
+[Expects you are knocked unconscious by a shrieking mandrake root, because you have no earmuffs.]
 Test untaken-ear-muffs with "n / e / take shovel / w / w / w / take mandrake root / i"
 
-[Expects you are knocked unconscious by a shrieking mandrake root, because you are not wearing ear muffs.]
-Test unworn-ear-muffs with "n / e / take shovel / w / w / take ear muffs / w / take mandrake root / i"
+[Expects you are knocked unconscious by a shrieking mandrake root, because you are not wearing earmuffs.]
+Test unworn-ear-muffs with "n / e / take shovel / w / w / take earmuffs / w / take mandrake root / i"
 
-[Expects you are warned, because you are not wearing ear muffs.]
-Test twice-unworn-ear-muffs with "n / e / take shovel / w / w / take ear muffs / w / take mandrake root / take mandrake root"
+[Expects you are warned, because you are not wearing earmuffs.]
+Test twice-unworn-ear-muffs with "n / e / take shovel / w / w / take earmuffs / w / take mandrake root / take mandrake root"
 
-[Expects you succeed on third pull when you finally wear ear muffs.]
-Test third-pull with "n / e / take shovel / w / w / take ear muffs / w / take mandrake root / take mandrake root / wear ear muffs / dig up mandrake root with the shovel / i"
+[Expects you succeed on third pull when you finally wear earmuffs.]
+Test third-pull with "n / e / take shovel / w / w / take earmuffs / w / take mandrake root / take mandrake root / wear earmuffs / dig up mandrake root with the shovel / i"
 
 Section 4 - Down The Downstream Path
 
