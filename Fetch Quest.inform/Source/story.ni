@@ -64,7 +64,10 @@ Instead of tasting the wax effigy:
 
 [The wax effigy looks like anyone who looks at it!]
 instead of showing the wax effigy to someone:
-	say "They look at it with a quizzical look. They say to you, 'Yeah, that looks like me.'"
+	if the squish of the wax effigy is unrecognizable:
+		say "They look at it with a quizzical look. They say to you, 'Looks like a blob of wax.'";
+	otherwise:
+		say "They look at it with a quizzical look. They say to you, 'Yeah, that looks like me.'"
 
 The Wizard is a man in the winding path. [The wizard is this here to tested the showing comand for now.]
 
@@ -95,7 +98,7 @@ And there is nothing you can do about it.";
 	end the story ;
 
 [Look at the effigy in every state, see what the wizard says about it, fix it, eat it]
-Test effigy with "east / look effigy / take effigy / look effigy / show effigy to wizard / taste effigy / look effigy / fix effigy / look effigy / eat effigy".
+Test effigy with "east / look effigy / take effigy / look effigy / show effigy to wizard / taste effigy / look effigy / show effigy to wizard / fix effigy / look effigy / eat effigy".
 
 [Test blob ending by eating an unrecognizable effigy]
 Test blob with "east / take effigy / drop effigy / take effigy / eat effigy / wait / wait / wait".
