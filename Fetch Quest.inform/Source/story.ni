@@ -72,7 +72,17 @@ Instead of tasting the wax effigy:
 		now the squish of the wax effigy is the squish after the current squish;
 		say "Oops. You squished it a little."
 
+[The wax effigy looks like anyone who looks at it!]
+instead of showing the wax effigy to someone:
+	say "They look at it with a quizzical look. They say to you, 'Yeah, that looks like me.'"
 
+The Wizard is a man in the winding path. [The wizard is this here to tested the showing comand for now.]
+
+Test effigy with "east / look effigy / take effigy / look effigy / taste effigy / look effigy / fix effigy / look effigy / eat effigy".
+
+Test wizard with "east / take effigy / show effigy to wizard".
+
+Test blob with "east / take effigy / drop effigy / take effigy / eat effigy".
 
 Section 2 - Down The Rising Path
 
