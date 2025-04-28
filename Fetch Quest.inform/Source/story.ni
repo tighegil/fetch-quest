@@ -28,14 +28,14 @@ Some Dragon Tree sap is a spell component.
 
 Section 3 - Down The Upstream Path
 
-The Upstream Path is north of the Glade and east of the Douglas Fir. "The path meanders through the forest, sometimes closer, sometimes farther from the stream. You walk along peacefully, mesmerized by its melodic, rhythmic gurgling. A sunny meadow lies [bold type]west[roman type] of the path. An old growth douglas fir tree is on the [bold type]east[roman type] side of the path."
+The Upstream Path is north of the Glade and east of the Douglas Fir. "The path meanders through the forest, sometimes closer, sometimes farther from the stream. You walk along peacefully, mesmerized by its melodic, rhythmic gurgling. [A Sunny Meadow] lies [bold type]west[roman type] of the path. An old growth [douglas fir] tree is on the [bold type]east[roman type] side of the path."
 
-A Douglas Fir is east of the Upstream Path. "This enormous fir tree is definitely old growth."
+A Douglas Fir is east of the Upstream Path. "This enormous fir tree is definitely old growth. [The Upstream Path] is to the [bold type]west[roman type]."
 
 A shovel is in the Douglas Fir. The description of the shovel is "This digging spade has a fine oak handle. The blade is firm and clean."
 Understand "spade" as a shovel.
 
-A Sunny Meadow is west of the Upstream Path. "The meadow is sunny, but wet and marshy. A dank, musty fragrance hangs in the air, rising from the damp soil. You hesitate to get your boots muddy, but you see a colorful patch further [bold type]west[roman type] on the far edge of the meadow. It is a sunny spot dotted by floppy rosettes of leaves adorned with purple flowers."
+A Sunny Meadow is west of the Upstream Path. "The meadow is sunny, but wet and marshy. A dank, musty fragrance hangs in the air, rising from the damp soil. You hesitate to get your boots muddy, but you see a colorful patch further [bold type]west[roman type] on the far edge of the meadow. It is a sunny spot dotted by floppy rosettes of leaves adorned with purple flowers. [The Upstream Path] is to the [bold type]east[roman type]."
 
 A backpack is a container in the Sunny Meadow.
 The backpack is wearable.
@@ -50,7 +50,7 @@ The description of the absinthe is "This liquid has a slightly minty licorice od
 Instead of drinking absinthe, say "You need to keep a sharp mind on your quest. Don't touch the absinthe."
 Instead of taking the absinthe, try taking the flask.
 
-A Mandrake Patch is west of the sunny meadow. "Mandrakes! So many mandrakes blossoming with delicate purple flowers in the wet, fecund earth. You know that just under the surface, buried within the rich loamy soil is the twisted, gnarly, forked root for which you search."
+A Mandrake Patch is west of the sunny meadow. "Mandrakes! So many mandrakes blossoming with delicate purple flowers in the wet, fecund earth. You know that just under the surface, buried within the rich loamy soil is the twisted, gnarly, forked root for which you search. [A Sunny Meadow] is to the [bold type]east[roman type]."
 
 A Mandrake root is a spell component.
 The description of the Mandrake root is "The plant is beautiful, but you have heard stories of people who died horrible deaths after pulling up a mandrake root. They are probably superstitious rumors, right?"
