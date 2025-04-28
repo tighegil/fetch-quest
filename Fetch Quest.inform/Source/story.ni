@@ -32,16 +32,6 @@ After taking the wax effigy:
 	if the current squish is not unrecognizable: 
 		now the squish of the wax effigy is the squish after the current squish.
 
-[For Section 1's Blob-State Ending - If the Player attempts to eat an unrecognizable Blob.]
-BlobState is a truth state that varies. BlobState is false.
-
-[If you eat the effigy when it's unrecognizable, you'll turn into a blob soon.]
-Check eating the wax effigy:
-	if the squish of the wax effigy is unrecognizable:
-		say "You're not sure it's a good idea to eat a wax effigy of nobody, but you do it anyway.";
-		now Blobstate is true;
-	otherwise:
-		say "The wax squishes between your teeth. Yum.";
 
 The description of the wax effigy is "[if the squish of the wax effigy is unmarred]The wax effigy looks familiar...you've never seen it before, but you can tell it's as good-looking as ever.[otherwise if the squish of the wax effigy is squished]The wax effigy looks a little squished, but you can still tell who it's supposed to be.[otherwise]The wax effigy is squished beyond recognition. Is it even still an effigy?[end if]"
 
@@ -78,11 +68,43 @@ instead of showing the wax effigy to someone:
 
 The Wizard is a man in the winding path. [The wizard is this here to tested the showing comand for now.]
 
+
+[For Section 1's Blob-State Ending - If the Player attempts to eat an unrecognizable Blob.]
+BlobState is a truth state that varies. BlobState is false.
+
+[If you eat the effigy when it's unrecognizable, you'll turn into a blob soon.]
+Check eating the wax effigy:
+	if the squish of the wax effigy is unrecognizable:
+		say "You're not sure it's a good idea to eat a wax effigy of nobody, but you do it anyway.";
+		now Blobstate is true;
+		The SickStomach in one turn from now;
+		The BlobEndingHappens in three turns from now;
+	say "The wax squishes between your teeth. Yum." instead;
+
+At the time when SickStomach:
+	say "Your tummy begins to feel funny.";
+
+At the time when BlobEndingHappens:
+	say "You start feeling funny all over. You look down and see your body seem to be liquefying. You are liquefying. Like the Wicked Witch of the west, you are melting. 
+
+You start to panic. You try screaming, but your vocal cords stop working mid-scream. It isn't long before you lose your sense of touch. The next thing you know you are a blob...of flesh? Or made of wax? You are not sure. You could be a lump of clay for all you know. Regardless, you are a blob. A 'lifeless' blob of...well, something. 
+
+You cannot talk. You cannot feel. You cannot move. You cannot breathe. Yet you are still conscious, still aware of your surroundings. You are stuck. You are trapped. 
+
+And there is nothing you can do about it.";
+	end the story ;
+
+
+
+[Look at the effigy in every state, fix it, eat it]
 Test effigy with "east / look effigy / take effigy / look effigy / taste effigy / look effigy / fix effigy / look effigy / eat effigy".
 
+[Test showing effigy to wizard]
 Test wizard with "east / take effigy / show effigy to wizard".
 
-Test blob with "east / take effigy / drop effigy / take effigy / eat effigy".
+[Test blob ending by eating an unrecognizable effigy]
+Test blob with "east / take effigy / drop effigy / take effigy / eat effigy / wait / wait / wait".
+
 
 Section 2 - Down The Rising Path
 
