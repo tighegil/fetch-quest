@@ -82,7 +82,7 @@ Check root-digging:
 		otherwise if the player carries the shovel:
 			try digging the mandrake root with the shovel instead;
 		otherwise:
-			say "A wise sorcerer once told you not to pull a Mandrake root with your bare hands. If only you had a shovel!";
+			say "A wise sorcerer once told you not to pull a Mandrake root with your bare hands. [bold type]If only you had a shovel[roman type]!";
 	otherwise:
 		say "You cannot dig up [the noun]."
 
@@ -94,9 +94,9 @@ Check digging it with:
 	if the noun is not the mandrake root:
 		say "There is no use wasting time to dig up [the noun]." instead;
 	otherwise if the second noun is not the shovel:
-		say "[The second noun] cannot be used for digging things. Use a shovel instead." instead;
+		say "[The second noun] cannot be used for digging things. [bold type]Use a shovel instead[roman type]." instead;
 	otherwise if the player does not carry the shovel:
-		say "If you want to do that, you need to find a shovel." instead.
+		say "If you want to do that, [bold type]you need to find a shovel[roman type]." instead.
 
 Carry out digging it with:
 	try taking the mandrake root;
@@ -104,7 +104,7 @@ Carry out digging it with:
 [end Digging]
 
 Instead of taking the Mandrake root when the player does not have the shovel:
-say "A wise sorcerer once told you not to pull a Mandrake root with your bare hands. If only you had a shovel!"
+say "A wise sorcerer once told you not to pull a Mandrake root with your bare hands. [bold type]If only you had a shovel[roman type]!"
 
 Instead of taking the Mandrake root when the player is not wearing the earmuffs:
 	If the mandrake root is unpulled:
@@ -116,6 +116,9 @@ Instead of taking the Mandrake root when the player is not wearing the earmuffs:
 [Expects a mandrake root added to your inventory.]
 Test mandrake with "n / e / take shovel / w / w / wear earmuffs / w / x mandrake root / take mandrake root / i"
 
+[Expects you succeed on third pull when you finally wear earmuffs.]
+Test mandrake-long-way with "n / w / w / take mandrake root / e / e / e / take shovel / w / w / x flask / drink flask / take earmuffs / w / x mandrake root / take mandrake root / dig up mandrake root / wear earmuffs / dig up mandrake root with the shovel / i"
+
 [Expects a mandrake root added to your inventory.]
 Test dig-mandrake with "n / e / take shovel / w / w / wear earmuffs / w / dig mandrake root / i"
 
@@ -126,16 +129,13 @@ Test dig-non-root with "n / e / take shovel / w / w / dig up earmuffs"
 Test no-shovel with "n / w / w / take mandrake root / i"
 
 [Expects you are knocked unconscious by a shrieking mandrake root, because you have no earmuffs.]
-Test untaken-ear-muffs with "n / e / take shovel / w / w / w / take mandrake root / i"
+Test untaken-earmuffs with "n / e / take shovel / w / w / w / take mandrake root / i"
 
 [Expects you are knocked unconscious by a shrieking mandrake root, because you are not wearing earmuffs.]
-Test unworn-ear-muffs with "n / e / take shovel / w / w / take earmuffs / w / take mandrake root / i"
+Test unworn-earmuffs with "n / e / take shovel / w / w / take earmuffs / w / take mandrake root / i"
 
 [Expects you are warned, because you are not wearing earmuffs.]
-Test twice-unworn-ear-muffs with "n / e / take shovel / w / w / take earmuffs / w / take mandrake root / take mandrake root"
-
-[Expects you succeed on third pull when you finally wear earmuffs.]
-Test third-pull with "n / e / take shovel / w / w / take earmuffs / w / take mandrake root / take mandrake root / wear earmuffs / dig up mandrake root with the shovel / i"
+Test twice-unworn-earmuffs with "n / e / take shovel / w / w / take earmuffs / w / take mandrake root / take mandrake root"
 
 Section 4 - Down The Downstream Path
 
