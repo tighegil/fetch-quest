@@ -16,13 +16,14 @@ A spell component is a kind of thing. A spell component is always edible. After 
 
 Section 1 - Down The Winding Path
 
-The Winding Path is east of the Glade. "You find yourself in what looks like the remains of a forest. The trees are all dead, a few of them fallen over. You feel an overwhelming sense of dread emanating from this former forest. You see a stump, with [a wax effigy] clumsily laid on top of it.".
+The Winding Path is east of the Glade. "You find yourself in what looks like the remains of a forest. The trees are all dead, a few of them fallen over. You feel an overwhelming sense of dread emanating from this former forest. You see a [stump][if wax effigy is on the stump], with [a wax effigy] clumsily laid on top of it[end if]."
+
+The stump is a supporter in the Winding Path. The description of the stump is "It is an old rotting stump covered in moss. But it is surprisingly still hard and stable enough to support things."
 
 [Squish values modeled after beverage heat values in "Disenchantment Bay"]
-
 Squish is a kind of value. The squishes are unmarred, squished, unrecognizable.
 
-The wax effigy is a spell component in The Winding Path. The wax effigy has a squish. The squish of the wax effigy is unmarred.
+The wax effigy is a spell component on the stump. The wax effigy has a squish. The squish of the wax effigy is unmarred.
 
 [Picking up the effigy will "squish" it once each time, until it is unrecognizable.]
 After taking the wax effigy:
@@ -65,12 +66,7 @@ Instead of tasting the wax effigy:
 	let the current squish be the squish of the wax effigy;
 	if the current squish is not unrecognizable: 
 		now the squish of the wax effigy is the squish after the current squish;
-		say "Oops. It's a little squished."
-		
-Instead of examining the wax effigy:
-	say "[if the squish of the wax effigy is unmarred]The wax effigy looks familiar...you've never seen it before, but you can tell it's as good-looking as ever.[otherwise if the squish of the wax effigy is squished]The wax effigy looks a little squished, but you can still tell who it's supposed to be.[otherwise]The wax effigy is squished beyond recognition. Is it even still an effigy?[end if]";
-	if the squish of the wax effigy is not unrecognizable:
-		say "Careful, it seems fragile.";
+		say "Oops. You squished it a little."
 
 Section 2 - Down The Rising Path
 
