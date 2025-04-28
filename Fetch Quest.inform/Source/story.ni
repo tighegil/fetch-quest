@@ -98,7 +98,7 @@ At the time when SickStomach:
 	say "Your tummy begins to feel funny.";
 
 At the time when BlobEndingHappens:
-	say "You start feeling funny all over. You look down and see your body seem to be liquefying. You are liquefying. Like the Wicked Witch of the west, you are melting. 
+	say "You start feeling funny all over. You look down and see that your body seems to be liquefying. You are liquefying. Like the Wicked Witch of the west, you are melting. 
 
 You start to panic. You try screaming, but your vocal cords stop working mid-scream. It isn't long before you lose your sense of touch. The next thing you know you are a blob...of flesh? Or made of wax? You are not sure. You could be a lump of clay for all you know. Regardless, you are a blob. A 'lifeless' blob of...well, something. 
 
@@ -110,6 +110,7 @@ And there is nothing you can do about it.";
 [Look at the effigy in every state, fix it, eat it]
 Test effigy with "east / look effigy / take effigy / look effigy / taste effigy / look effigy / fix effigy / look effigy / fix effigy / eat effigy".
 
+[Test wizard's dialgoue]
 Test wizard with "east / talk to wizard / take effigy / show effigy to wizard / taste effigy / look effigy / show effigy to wizard / eat effigy / talk to wizard".
 
 [Test blob ending by eating an unrecognizable effigy]
