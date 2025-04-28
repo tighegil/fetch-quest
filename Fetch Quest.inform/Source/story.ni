@@ -23,6 +23,9 @@ The stump is a supporter in the Winding Path. The description of the stump is "I
 [Squish values modeled after beverage heat values in "Disenchantment Bay"]
 Squish is a kind of value. The squishes are unmarred, squished, unrecognizable.
 
+[For Section 1's Blob-State Ending - If the Player attempts to eat an unrecognizable Blob.]
+BlobState is a truth state that varies. BlobState is false.
+
 The wax effigy is a spell component on the stump. The wax effigy has a squish. The squish of the wax effigy is unmarred.
 
 [Picking up the effigy will "squish" it once each time, until it is unrecognizable.]
@@ -63,17 +66,24 @@ Instead of tasting the wax effigy:
 		say "Oops. You squished it a little."
 
 [The wax effigy looks like anyone who looks at it!]
-instead of showing the wax effigy to someone:
+Instead of showing the wax effigy to someone:
+	say "They look at it with a quizzical look.";
 	if the squish of the wax effigy is unrecognizable:
-		say "They look at it with a quizzical look. They say to you, 'Looks like a blob of wax.'";
+		say "They say to you, 'Looks like a blob of wax.'";
 	otherwise:
-		say "They look at it with a quizzical look. They say to you, 'Yeah, that looks like me.'"
+		say "They say to you, 'Yeah, that looks like me.'"
 
-The Wizard is a man in the winding path. [The wizard is this here to tested the showing comand for now.]
+The Wizard is a man in the winding path. The description of the wizard is "The wizard has a long white beard. He is wearing a sky blue robe with a matching pointed hat. He smiles and nods mysteriously at you." [The wizard is this here to tested the showing comand for now.]
 
+Talking to is an action applying to one visible thing. Understand "talk to [someone]" as talking to.
 
-[For Section 1's Blob-State Ending - If the Player attempts to eat an unrecognizable Blob.]
-BlobState is a truth state that varies. BlobState is false.
+Check talking to: say "[The noun] doesn't reply."
+
+Instead of talking to the wizard:
+	if Blobstate is true:
+		say "The wizard looks you up and down. 'You don't look so good.'";
+	otherwise:
+		say "The wizard smiles and nods mysteriously at you, completely ignoring whatever you've said.";
 
 [If you eat the effigy when it's unrecognizable, you'll turn into a blob soon.]
 Check eating the wax effigy:
@@ -97,11 +107,13 @@ You cannot talk. You cannot feel. You cannot move. You cannot breathe. Yet you a
 And there is nothing you can do about it.";
 	end the story ;
 
-[Look at the effigy in every state, see what the wizard says about it, fix it, eat it]
-Test effigy with "east / look effigy / take effigy / look effigy / show effigy to wizard / taste effigy / look effigy / show effigy to wizard / fix effigy / look effigy / eat effigy".
+[Look at the effigy in every state, fix it, eat it]
+Test effigy with "east / look effigy / take effigy / look effigy / taste effigy / look effigy / fix effigy / look effigy / fix effigy / eat effigy".
+
+Test wizard with "east / talk to wizard / take effigy / show effigy to wizard / taste effigy / look effigy / show effigy to wizard / eat effigy / talk to wizard".
 
 [Test blob ending by eating an unrecognizable effigy]
-Test blob with "east / take effigy / drop effigy / take effigy / eat effigy / wait / wait / wait".
+Test blob with "east / take effigy / drop effigy / take effigy / eat effigy / talk to wizard / wait / wait".
 
 
 Section 2 - Down The Rising Path
