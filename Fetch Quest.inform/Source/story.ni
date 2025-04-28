@@ -117,7 +117,7 @@ Instead of taking the Mandrake root when the player is not wearing the earmuffs:
 Test mandrake with "n / e / take shovel / w / w / wear earmuffs / w / x mandrake root / take mandrake root / i"
 
 [Expects you succeed on third pull when you finally wear earmuffs.]
-Test mandrake-long-way with "n / e / take shovel / w / w / x flask / drink flask / take earmuffs / w / x mandrake root / take mandrake root / dig up mandrake root / wear earmuffs / dig up mandrake root with the shovel / i"
+Test mandrake-long-way with "n / w / w / take mandrake root / e / e / e / take shovel / w / w / x flask / drink flask / take earmuffs / w / x mandrake root / take mandrake root / dig up mandrake root / wear earmuffs / dig up mandrake root with the shovel / i"
 
 [Expects a mandrake root added to your inventory.]
 Test dig-mandrake with "n / e / take shovel / w / w / wear earmuffs / w / dig mandrake root / i"
