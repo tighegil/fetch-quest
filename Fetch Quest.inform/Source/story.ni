@@ -94,13 +94,8 @@ You cannot talk. You cannot feel. You cannot move. You cannot breathe. Yet you a
 And there is nothing you can do about it.";
 	end the story ;
 
-
-
-[Look at the effigy in every state, fix it, eat it]
-Test effigy with "east / look effigy / take effigy / look effigy / taste effigy / look effigy / fix effigy / look effigy / eat effigy".
-
-[Test showing effigy to wizard]
-Test wizard with "east / take effigy / show effigy to wizard".
+[Look at the effigy in every state, see what the wizard says about it, fix it, eat it]
+Test effigy with "east / look effigy / take effigy / look effigy / show effigy to wizard / taste effigy / look effigy / fix effigy / look effigy / eat effigy".
 
 [Test blob ending by eating an unrecognizable effigy]
 Test blob with "east / take effigy / drop effigy / take effigy / eat effigy / wait / wait / wait".
