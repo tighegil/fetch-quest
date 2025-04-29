@@ -30,11 +30,9 @@ Section 2.2 - NPCs and Objects
 
 There is a blanket in the Rising path.
 
-A ware is a kind of thing. A ware has a number called the price.
-
-A hoe is a ware on the blanket. The price of a hoe is 40.
-
 The merchant is a man on the blanket.
+
+A ware is a kind of thing. A ware has a number called the price.
 
 The coin pouch is a thing. The coin pouch has a number called the balance. The balance of the coin pouch is usually 0.
 
@@ -43,7 +41,7 @@ After printing the name of the coin pouch:
 
 Section 2.3 - Buying Things
 
-Section 2 - Buying Things
+A hoe is a ware on the blanket. The price of a hoe is 40.
 
 Instead of taking a ware (called the ware):
 	say "You can't steal [the ware], the merchant is looking right at you."
@@ -64,8 +62,7 @@ Carry out buying a thing (called the ware):
 
 Report buying a thing (called the ware):
 	say "You buy [the ware].";
-	now the balance of the coin pouch is the balance of the coin pouch minus the price of the ware.
-
+	now the balance of the coin pouch is the balance of the coin pouch minus the price of the ware. 
 
 Instead of asking the merchant about "wares", say "I have wares if you have coin."
 
@@ -107,6 +104,9 @@ Carry out working:
 
 Report working:
 	say "You work hard and earn one coin."
+	
+After examining the farmer for the first time:
+	say "'Hey there! I could use some help around the farm if you'd like to work. Of course I will pay you,' says the farmer, continuing 'By the way, you wouldn't happen to have seen a hoe, have you? Mine broke and I really need another.'"
 
 Section 2.6 - Quest Progress
 
