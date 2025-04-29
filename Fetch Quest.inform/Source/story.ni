@@ -105,8 +105,6 @@ Report working:
 After examining the farmer for the first time:
 	say "'Hey there! I could use some help around the farm if you'd like to work. Of course I will pay you,' says the farmer, continuing 'By the way, you wouldn't happen to have seen a hoe, have you? Mine broke and I really need another.'"
 
-Section 2 - Quest Progress
-
 Section 2 - The Hoe Quest
 
 The hoe quest is a scene.
