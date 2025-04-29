@@ -178,8 +178,6 @@ Check giving something (called the thing) to the spirit:
 Report giving the fertilizer to the spirit:
 	say "You give the spirit the fertilizer. 'Thank you. This will help the tree thrive. Is there anything I give to you?'".
 
-Section 2 - The Dragon Tree Sap
-
 Section 2.12 - The Dragon Tree Sap
 
 Some Dragon Tree sap is a spell component.
