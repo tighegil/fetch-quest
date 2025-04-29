@@ -22,24 +22,26 @@ The wax effigy is a spell component.
 
 Section 2 - Down The Rising Path
 
-Section 2 - Locations
+Section 2.1 - Locations
 
 The Rising Path is west of the Glade. "The path meanders west over a steep hill. You can see that the hill flattens out further to the west."
 
-Section 2 - NPCs and Objects
+Section 2.2 - NPCs and Objects
 
 There is a blanket in the Rising path.
 
-The merchant is a man on the blanket.
-
 A ware is a kind of thing. A ware has a number called the price.
+
+A hoe is a ware on the blanket. The price of a hoe is 40.
+
+The merchant is a man on the blanket.
 
 The coin pouch is a thing. The coin pouch has a number called the balance. The balance of the coin pouch is usually 0.
 
 After printing the name of the coin pouch:
 	say " ([the balance of the coin pouch])".
 
-A hoe is a ware on the blanket. The price of a hoe is 40.
+Section 2.3 - Buying Things
 
 Section 2 - Buying Things
 
@@ -62,17 +64,21 @@ Carry out buying a thing (called the ware):
 
 Report buying a thing (called the ware):
 	say "You buy [the ware].";
-	now the balance of the coin pouch is the balance of the coin pouch minus the price of the ware. 
+	now the balance of the coin pouch is the balance of the coin pouch minus the price of the ware.
+
 
 Instead of asking the merchant about "wares", say "I have wares if you have coin."
 
-Section 2 - The Farm
+Section 2.4 - The Farm
 
 The Farm is west of the Rising Path. "The farm is small yet diverse with different crops and animals all around. There is much work for the sole farmer. A forest sprouts up to the south."
 
 The farmer is a man in the farm.
 
-Section 2 - Working at the Farm
+After examining the farmer for the first time:
+	say "'Hey there! I could use some help around the farm if you'd like to work. Of course I will pay you,' says the farmer, continuing 'By the way, you wouldn't happen to have seen a hoe, have you? Mine broke and I really need another.'"
+
+Section 2.5 - Working at the Farm
 
 Working is an action applying to nothing. Understand "work" as working.
 
@@ -101,11 +107,10 @@ Carry out working:
 
 Report working:
 	say "You work hard and earn one coin."
-	
-After examining the farmer for the first time:
-	say "'Hey there! I could use some help around the farm if you'd like to work. Of course I will pay you,' says the farmer, continuing 'By the way, you wouldn't happen to have seen a hoe, have you? Mine broke and I really need another.'"
 
-Section 2 - The Hoe Quest
+Section 2.6 - Quest Progress
+
+Section 2.7 - The Hoe Quest
 
 The hoe quest is a scene.
 
@@ -133,7 +138,7 @@ Check giving something (called the thing) to the farmer:
 Report giving the hoe to the farmer:
 	say "You give the farmer the hoe. He thanks you and gives you 20 coins. 'I really owe you one,' he says."
 
-Section 2 - The Fertilizer
+Section 2.8 - The Fertilizer
 
 Some fertilizer is a thing.
 
@@ -144,11 +149,11 @@ Report asking the farmer about "fertilizer" when the hoe quest is not happening:
 	say "The farmer gives you some fertilizer. 'You've helped me out plenty. I'm happy to return the favor.'";
 	rule succeeds.
 
-Section 2 - The Forest
+Section 2.9 - The Forest
 
 The Forest is  south of the farm. "The forest is sparse, with just enough cover to escape the hot sun. The Dragon Tree is alone in a larger clearing in the forest."
 
-Section 2 - The Dragontree
+Section 2.10 - The Dragontree
 
 A Dragon Tree is in the forest. The description of the tree is "The Dragon Tree looks like it has seen better days. Shriveled leaves hang limply from its withered branches."
 
@@ -157,8 +162,8 @@ The Dragon Tree Spirit is a person.
 After examining the Dragon Tree for the first time:
 	say "A spirit emerges from the tree as you stand before it. 'Please... help...'";
 	now the Dragon Tree Spirit is in the forest.
-
-Section 2 - The Fertilizer Quest
+	
+Section 2.11 - The Fertilizer Quest
 
 The fertilizer quest is a scene. The fertilizer quest begins when asking the spirit about "tree". The fertilizer quest ends when giving the fertilizer to the spirit.
 	
@@ -174,6 +179,8 @@ Report giving the fertilizer to the spirit:
 	say "You give the spirit the fertilizer. 'Thank you. This will help the tree thrive. Is there anything I give to you?'".
 
 Section 2 - The Dragon Tree Sap
+
+Section 2.12 - The Dragon Tree Sap
 
 Some Dragon Tree sap is a spell component.
 	
