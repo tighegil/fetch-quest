@@ -36,7 +36,22 @@ Section 4 - Down The Downstream Path
 
 The Downstream Path is south of the Glade.
 
+The Downstream Path is a room. "You can see a damp cave further south along the river."
+
+The Cave is a dark room.   The Cave is south of the Downstream Path. "Extra Description"
+
+The Fairy is a thing.
+
+After going to The Downstream Path from The Cave for the first time: now The Fairy is in the Downstream Path; say "You see a fairy floating helplessly downriver."
+
+Every turn: if the player is in a dark room and the player is carrying the fairy, say "A light is peeking out of your bag."
+
+Every turn: If the the fairy is in the cave, now the fairy is lit; otherwise now the fairy is unlit.
+
+Check taking the fairy when the fairy is in the cave: say "The fairy flutters out of your reach." instead.
+
 Some mustard seed is a spell component.
+Some mustard seed is in The Cave.
 
 Section 5 - Down The Widdershins Path
 
