@@ -16,9 +16,106 @@ A spell component is a kind of thing. A spell component is always edible. After 
 
 Section 1 - Down The Winding Path
 
-The Winding Path is east of the Glade.
+The Winding Path is east of the Glade. "You find yourself in what looks like the remains of a forest. The trees are all dead, a few of them fallen over. You feel an overwhelming sense of dread emanating from this former forest. You see a [stump][if wax effigy is on the stump], with [a wax effigy] clumsily laid on top of it[end if]."
 
-The wax effigy is a spell component.
+The stump is a supporter in the Winding Path. The description of the stump is "It is an old rotting stump covered in moss. But it is surprisingly still hard and stable enough to support things."
+
+[Squish values modeled after beverage heat values in "Disenchantment Bay"]
+Squish is a kind of value. The squishes are unmarred, squished, unrecognizable.
+
+[For Section 1's Blob-State Ending - If the Player attempts to eat an unrecognizable Blob.]
+BlobState is a truth state that varies. BlobState is false.
+
+The wax effigy is a spell component on the stump. The wax effigy has a squish. The squish of the wax effigy is unmarred.
+
+[Picking up the effigy will "squish" it once each time, until it is unrecognizable.]
+After taking the wax effigy:
+	say "Oops, you squish it a little accidentally.";
+	let the current squish be the squish of the wax effigy;
+	if the current squish is not unrecognizable: 
+		now the squish of the wax effigy is the squish after the current squish.
+
+
+The description of the wax effigy is "[if the squish of the wax effigy is unmarred]The wax effigy looks familiar...you've never seen it before, but you can tell it's as good-looking as ever.[otherwise if the squish of the wax effigy is squished]The wax effigy looks a little squished, but you can still tell who it's supposed to be.[otherwise]The wax effigy is squished beyond recognition. Is it even still an effigy?[end if]"
+
+After examining the wax effigy:
+	if the squish of the wax effigy is not unrecognizable:
+		say "Careful, it seems fragile.";
+
+[The player can fix the wax effigy if it becomes unrecognizable.]
+Fixing is an action applying to one touchable thing.
+Understand "fix [something]" as fixing.
+
+Check fixing something (called target):
+	if the target is not the wax effigy:
+		say "You aren't sure how to fix that." instead.
+		
+Report fixing the wax effigy:
+	if the squish of the wax effigy is not unmarred:
+		say "You sculpt the wax effigy in your own image.";
+		now the squish of the wax effigy is unmarred;
+	otherwise:
+		say "This seems fine as-is.";
+
+[The player can taste the wax effigy, but this will squish it.]
+Instead of tasting the wax effigy:
+	say "This tastes like crayons!";
+	let the current squish be the squish of the wax effigy;
+	if the current squish is not unrecognizable: 
+		now the squish of the wax effigy is the squish after the current squish;
+		say "Oops. You squished it a little."
+
+[The wax effigy looks like anyone who looks at it!]
+Instead of showing the wax effigy to someone:
+	say "They look at it with a quizzical look.";
+	if the squish of the wax effigy is unrecognizable:
+		say "They say to you, 'Looks like a blob of wax.'";
+	otherwise:
+		say "They say to you, 'Yeah, that looks like me.'"
+
+The Wizard is a man in the winding path. The description of the wizard is "The wizard has a long white beard. He is wearing a sky blue robe with a matching pointed hat. He smiles and nods mysteriously at you." [The wizard is this here to tested the showing comand for now.]
+
+Talking to is an action applying to one visible thing. Understand "talk to [someone]" as talking to.
+
+Check talking to: say "[The noun] doesn't reply."
+
+Instead of talking to the wizard:
+	if Blobstate is true:
+		say "The wizard looks you up and down. 'You don't look so good.'";
+	otherwise:
+		say "The wizard smiles and nods mysteriously at you, completely ignoring whatever you've said.";
+
+[If you eat the effigy when it's unrecognizable, you'll turn into a blob soon.]
+Check eating the wax effigy:
+	if the squish of the wax effigy is unrecognizable:
+		say "You're not sure it's a good idea to eat a wax effigy of nobody, but you do it anyway.";
+		now Blobstate is true;
+		The SickStomach in one turn from now;
+		The BlobEndingHappens in three turns from now;
+	say "The wax squishes between your teeth. Yum." instead;
+
+At the time when SickStomach:
+	say "Your tummy begins to feel funny.";
+
+At the time when BlobEndingHappens:
+	say "You start feeling funny all over. You look down and see that your body seems to be liquefying. You are liquefying. Like the Wicked Witch of the west, you are melting. 
+
+You start to panic. You try screaming, but your vocal cords stop working mid-scream. It isn't long before you lose your sense of touch. The next thing you know you are a blob...of flesh? Or made of wax? You are not sure. You could be a lump of clay for all you know. Regardless, you are a blob. A 'lifeless' blob of...well, something. 
+
+You cannot talk. You cannot feel. You cannot move. You cannot breathe. Yet you are still conscious, still aware of your surroundings. You are stuck. You are trapped. 
+
+And there is nothing you can do about it.";
+	end the story ;
+
+[Look at the effigy in every state, fix it, eat it]
+Test effigy with "east / look effigy / take effigy / look effigy / taste effigy / look effigy / fix effigy / look effigy / fix effigy / eat effigy".
+
+[Test wizard's dialgoue]
+Test wizard with "east / talk to wizard / take effigy / show effigy to wizard / taste effigy / look effigy / show effigy to wizard / eat effigy / talk to wizard".
+
+[Test blob ending by eating an unrecognizable effigy]
+Test blob with "east / take effigy / drop effigy / take effigy / eat effigy / talk to wizard / wait / wait".
+
 
 Section 2 - Down The Rising Path
 
