@@ -257,9 +257,140 @@ Some mustard seed is in The Cave.
 
 Section 5 - Down The Widdershins Path
 
-The Widdershins Path is northwest of the glade.
+The Widdershins Path is northwest of the glade.  "This section of the forest is thick with trees and shrubs.  Someone thought it made an excellent social space, though, as they have constructed a nice [picnic table] and placed a [BBQ grill] here.  The dirt path leads southeast back toward the glade."
 
-Some quicksilver is a spell component.
+The picnic table is a fixed in place supporter in the Widdershins Path.  The description is "This picnic table, expertly crafted of sustainably-sourced redwood, boasts a natural charm and durability that's perfect for scary places like the Widdershins Path. [if blanket is on the picnic table]A blanket lies on the table. It is folded neatly, and it has a tacky red and blue checkered pattern.[end if] [if basket is on the picnic table] A charming little picnic basket sits on the table."
+
+A picnic blanket is a thing on the picnic table. The printed name is "picnic blanket".  The description is "A red and blue checkered picnic blanket. It is thin and well-worn, but is the perfect size to throw over an escaping animal."  Understand "blanket" or "picnic blanket" as the picnic blanket.
+
+A uselessObject is a kind of thing.
+
+A uselessBlanket is a fixed in place uselessObject.  The printed name is "charred picnic blanket".  The description is "You can tell that this used to be a red and blue checkered picnic blanket, before it caught on fire somehow."  Understand "charred picnic blanket" as the uselessBlanket.
+
+The BBQ grill is a fixed in place supporter in the Widdershins Path.  The description is "A heavy-duty combo grill stands here - sleek and sturdy, with side-by-side gas and charcoal fireboxes.  Cast iron grates rest above dual heat sources, and a stainless steel warming rack hovers overhead.  Vents and adjustable trays offer precise temperature control.  A side burner waits for sauces or sides.  It even has a spacious storage cabinet beneath[if storage cabinet is closed], which appears to be secured by a slender silver lock[end if].  The scent of past cookouts lingers faintly in the air. [if shards are in Widdershins Path]Some silver shards glitter at the base of the grill. [end if][if net is on the BBQ grill]A net lies coiled on top of the warming rack. [end if]"
+
+A storage cabinet is an undescribed locked openable container.  The storage cabinet is part of the BBQ grill.
+
+Instead of unlocking the storage cabinet with the quicksliver:
+	If a random chance of 2 in 3 succeeds:
+		say "You manage to pick the lock on the storage cabinet, but the quicksliver was broken in the process.  The cabinet doors ponderously swing open.";
+		now the storage cabinet is unlocked;
+		now the storage cabinet is open;
+		now the quicksliver is off-stage;
+		now the shards are in the location;
+	else:
+		say "You didn't quite get it this time, but maybe if you try again...";
+
+A net is a thing on the BBQ grill.  The description is "A circular net made of tough, knotted rope, its edges lined with heavy lead weights.  Designed to be thrown, it spreads wide in the air before crashing down to entangle its target. The mesh is coarse but flexible, and a set of braided cords trails from the center - ready to be yanked to cinch it tight."  It is undescribed.
+
+A uselessNet is a fixed in place uselessObject.  The printed name is "old net".  The description is "A circular net made of tough, knotted rope, its edges lined with heavy lead weights.  Unfortunately, this one is brittle and useless."  Understand "old net" as the uselessNet.
+
+An ingot is a fixed in place thing on top of the picnic table.  The printed name is "ingot of quicksilver".  The description is "This is a strange ingot, cool and unnaturally smooth.  Its surface gleams with a muted, silvery luster that seems to ripple like frozen liquid.  Though clearly solid, it catches the light in a way that feels almost alive - like it’s holding motion just beneath its metallic skin.  You sense that this is no ordinary metal; it hums with latent energy, dense and unnerving."
+
+Instead of taking or touching the ingot:
+	say "At first touch, the ingot shudders, then quivers.  With a metallic squelch, it ripples like molten mercury, sprouts stubby pseudopods, and leaps away in a panic.  It clinks to the ground, jiggles indignantly, and darts down the path toward the glade, leaving a faint shimmer in its wake.";
+	now ingot is off-stage;
+	now slime is in the glade;
+
+Instead of throwing something at the ingot:
+	if the noun is carried by the player:
+		say "Even as [the noun] sails through the air toward it, the ingot seemingly melts, dripping between the boards of the table to land in a puddle on the dirt path beneath.  The puddle shudders, then quivers, and with a metallic squelch, it ripples like molten mercury and sprouts stubby pseudopods.  It darts down the path toward the glade, leaving a faint shimmer in its wake.";
+		now ingot is off-stage;
+		now slime is in the glade;
+		now the noun is in the location;
+		now the noun is described;
+	else:
+		say "You can't see any such thing.";
+	
+netTried is a truth state that varies.  netTried is false.
+basketTried is a truth state that varies.  basketTried is false.
+blanketTried is a truth state that varies. blanketTried is false.
+
+Instead of throwing something at the slime:
+	if the slime is asleep:
+		say "That would probably wake it up...";
+	else:
+		if the noun is the blanket:
+			say "The blanket magestically flutters through the air and lands atop the quicksilver slime. Unfortunately for you, the slime soaks right through it, laughs, [if netTried is true and basketTried is true]yawns, [end if]and then darts down the path. The wet spot on the blanket suddenly combusts. ";
+			now blanket is off-stage;
+			now uselessBlanket is in the location;
+			now blanketTried is true;
+		else if the noun is the basket:
+			say "The expertly thrown basket lands upside-down atop the quicksilver slime, but before you could slide the top closed, the slime bursts through the side of the basket, jumps up and down, laughs, [if netTried is true and blanketTried is true]yawns, [end if]and then darts down the path. There is a huge hole in the side of the basket. ";
+			now basket is off-stage;
+			now uselessBasket is in the location;
+			now basketTried is true;
+		else if the noun is the net:
+			say "As the net settles on top of the quicksilver slime, it laughs out loud and just oozes out through the openings in the net.  It laughs again, jiggling a bit, [if basketTried is true and blanketTried is true]yawns, [end if]and darts down the path. Wherever the slime touched the strands of the net, they dissolve into dust. ";
+			now net is off-stage;
+			now uselessNet is in the location;
+			now netTried is true;
+		else if the noun is carried by the player:
+			say "Futile.";  [fix this]
+			stop the action;
+		else:
+			say "You're not carrying [the noun], so you can't throw it!";
+			stop the action;
+		let viable-rooms be a list of rooms;
+		repeat with way running through directions:
+			let place be the room way from the location;
+			if place is a room:
+				add place to viable-rooms;
+		if location is listed in viable-rooms:
+			remove the location from viable-rooms;
+		let N be a random number from 1 to the number of entries in viable-rooms;
+		let destination be entry N in viable-rooms;
+		now slime is in destination;
+		if the noun is the blanket or the noun is the basket or the noun is the net:
+			say "[The noun] is useless to you now.";
+			[now the noun is off-stage;]
+		if netTried is true and blanketTried is true and basketTried is true:
+			now slime is asleep;
+			now the printed name of slime is "sleeping quicksilver slime".
+			
+Instead of taking the slime:
+	if the slime is asleep:
+		now slime is off-stage;
+		now quicksliver is carried by the player;
+		say "The sleeping quicksilver slime continues softly snoring as you attempt to pick it up.  You can't seem to get it in one piece, as it just keeps dripping between your fingers, but you do manage to get some of it.  The rest of it drains away into the dirt path.";
+	else:
+		say "It zigs and zags and you can't seem to get close enough to get hold of it."
+		
+Instead of touching the slime:
+	if the slime is asleep:
+		say "It feels...mercurial.  Luckily, your gentle poke fails to awaken it.";
+	else:
+		say "It zigs and zags and you can't seem to get close enough to get hold of it."
+	
+A slime is a thing.  The printed name is "quicksilver slime".  The description is "[if slime is not asleep]A jittery blob of semi-solid metal, the quicksilver slime pulses with nervous energy. Its mirrored surface warps reflections as it quivers, barely holding its shape. It gives off a faint metallic plink now and then, as if ready to flee at any moment.[else]A blob of semi-solid metal, the quicksilver slime pulses slowly and emits a soft but rythmic snore.  Its mirrored surface warps reflections as it slowly breathes.[end if]"
+
+The slime can be asleep or not asleep.  The slime is not asleep.
+
+Some quicksilver is a spell component.  It is in the storage cabinet.
+
+A basket is an open openable container on the table.  The printed name is "picnic basket".  The description is "A picnic basket."
+
+A uselessBasket is a fixed in place uselessObject.  The printed name is "busted picnic basket".  The description is "A picnic basket with a huge hole in one side."  Understand "busted picnic basket" as the uselessBasket.
+
+Instead of taking a uselessObject:
+	say "There's really no point in picking this up.";
+
+Instead of inserting into the basket:
+	say "That might soil the inside of the basket, ruining it for future picnics!";
+
+A quicksliver is a thing.  The quicksliver unlocks the storage cabinet.  The description is "This skinny sliver of shiny metal reminds you of a lockpick."
+
+Some shards is a fixed in place uselessObject.  The printed name is "shards of quicksliver".  The description is "These shards are all that is left of the quicksliver.  They are embedded in the ground and refuse to come out."
+
+test qs1 with " inv / nw / examine grill / take net / examine cabinet / open cabinet / examine table / examine blanket / take blanket / examine basket / take basket / examine ingot / take ingot / se / throw blanket at slime ";  [now you have to find the slime in one of the adjacent rooms]
+
+test qs2 with " throw net at slime ";  [now you have to find the slime in one of the adjacent rooms]
+
+test qs3 with " throw basket at slime ";  [now you have to find the slime in one of the adjacent rooms]
+
+test qs4 with " examine slime / touch slime / take slime / inv / examine quicksliver ";  [now you have to make your way back to Widdershins Path]
+
+test qs5 with " open cabinet with quicksliver / inv / look / examine shards / look in cabinet / take quicksilver / inv / se ";
 
 Section 6 - Fetched
 
